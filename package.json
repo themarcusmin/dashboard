@@ -3,11 +3,11 @@
   "name": "Dashboard",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/components/App.js",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "dev": "parcel src/index.html",
+    "dev": "parcel public/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"

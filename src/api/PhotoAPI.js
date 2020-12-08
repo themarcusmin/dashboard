@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createApi } from "unsplash-js";
-import LikePhoto from "./LikePhoto";
+import LikePhoto from "../components/LikePhoto";
 
 const api = createApi({
   accessKey: process.env.UNSPLASH_API,

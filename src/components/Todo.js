@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Modal from "./Modal";
 import EmailSVG from "./icons/email.svg";
-import SendMail from "./SendMail";
+import SendMail from "../api/SendMail";
 import Draggable from "react-draggable";
 
 class Todo extends Component {
