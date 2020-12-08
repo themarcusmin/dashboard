@@ -133,7 +133,7 @@ class Todo extends Component {
                   </div>
                 ))
               ) : (
-                <div>You're chillin</div>
+                <div>{"You're chillin"}</div>
               )}
               <button className="addTodo">Add New Task</button>
             </div>

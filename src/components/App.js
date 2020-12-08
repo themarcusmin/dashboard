@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { render } from "react-dom";
+import React from "react";
 import Clock from "./Clock";
 import Todo from "./Todo";
 import PhotoAPI from "../api/PhotoAPI";
@@ -18,4 +17,4 @@ const App = () => {
   );
 };
 
-render(<App />, document.getElementById("root"));
+export default App;

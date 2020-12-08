@@ -6,6 +6,7 @@ import { NotificationManager } from "react-notifications";
 // Regex to check email address
 // Credits to https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
 const validateEmail = (email) => {
+  // eslint-disable-next-line
   const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   return re.test(String(email).toLowerCase());
 };
@@ -36,7 +37,7 @@ const SendMail = (_recipient, _today, _message) => {
   };
 
   emailjs.send("service_t04xzk6", "template_form", template_params).then(
-    (res) => NotificationManager.success("Mail Sent..", "Success", 4000),
+    () => NotificationManager.success("Mail Sent..", "Success", 4000),
     (err) => NotificationManager.error(err.text)
   );
 };

@@ -8,14 +8,13 @@ const Clock = () => {
   let currentHour = new Date().getHours() % 12;
   let currentMinute = new Date().getMinutes() % 60;
   let currentSecond = new Date().getSeconds() % 60;
-  let currentTimeFormat = new Date().toLocaleTimeString().slice(-2);
+  const currentTimeFormat = new Date().toLocaleTimeString().slice(-2);
 
   const [hour, setHour] = useState(currentHour);
   const [minute, setMinute] = useState(currentMinute);
   const [second, setSecond] = useState(currentSecond);
-  const [timeFormat, setTimeFormat] = useState(currentTimeFormat);
   const [hourReset, setHourReset] = useState(false);
-  const [date, setDate] = useState(new Date().toDateString());
+  const date = new Date().toDateString();
 
   const secondRef = useRef();
   const minuteRef = useRef();
@@ -25,7 +24,9 @@ const Clock = () => {
   minuteRef.current = minute;
   hourResetRef.current = hourReset;
 
+  /* eslint-disable no-unused-vars */
   useEffect(() => {
+    console.log("ok");
     const interval = setInterval(() => {
       setSecond((second) => (second + 1) % 60);
       // minute + 1 when second reaches 00
@@ -41,13 +42,13 @@ const Clock = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+  /* eslint-enable no-unused-vars */
 
   return (
     <div>
       <h1 className="clock f-subheadline lh-title">
         {formatter(hour)} : {formatter(minute)} : {formatter(second)}{" "}
-        {timeFormat}
-        {/* {time.toLocaleTimeString()} */}
+        {currentTimeFormat}
       </h1>
       <h3 className="dateTime f-subheadline lh-solid">{date}</h3>
     </div>
