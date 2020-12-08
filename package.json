@@ -1,6 +1,6 @@
 {
   "homepage": "https:://themarcusmin.github.io/dashboard",
-  "name": "Dashboard",
+  "name": "my-dashboard",
   "version": "1.0.0",
   "description": "",
   "main": "src/components/App.js",
