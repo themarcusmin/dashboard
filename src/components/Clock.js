@@ -26,7 +26,6 @@ const Clock = () => {
 
   /* eslint-disable no-unused-vars */
   useEffect(() => {
-    console.log("ok");
     const interval = setInterval(() => {
       setSecond((second) => (second + 1) % 60);
       // minute + 1 when second reaches 00
