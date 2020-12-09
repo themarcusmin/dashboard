@@ -4,7 +4,7 @@ import nodeFetch from "node-fetch";
 import LikePhoto from "../components/LikePhoto";
 
 const api = createApi({
-  accessKey: process.env.UNSPLASH_API,
+  accessKey: process.env.REACT_APP_UNSPLASH_API,
   fetch: nodeFetch,
 });
 
@@ -19,7 +19,6 @@ const PhotoAPI = () => {
     photoURL
       ? null
       : api.photos.getRandom({ query: "nature" }).then((result) => {
-          console.log(result);
           switch (result.type) {
             case "error":
               console.log("Error occured: ", result.errors[0]);

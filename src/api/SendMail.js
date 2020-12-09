@@ -1,5 +1,5 @@
 import emailjs, { init } from "emailjs-com";
-init(process.env.EMAILJS_API);
+init(process.env.REACT_APP_EMAILJS_API);
 
 import { NotificationManager } from "react-notifications";
 
