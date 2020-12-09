@@ -21,6 +21,7 @@
     "@material-ui/icons": "^4.11.2",
     "dotenv": "^8.2.0",
     "emailjs-com": "^2.6.4",
+    "node-fetch": "^2.6.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-draggable": "^4.4.3",

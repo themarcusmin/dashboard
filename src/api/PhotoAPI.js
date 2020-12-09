@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { createApi } from "unsplash-js";
+import nodeFetch from "node-fetch";
 import LikePhoto from "../components/LikePhoto";
 
 const api = createApi({
   accessKey: process.env.UNSPLASH_API,
+  fetch: nodeFetch,
 });
 
 const PhotoAPI = () => {
@@ -16,15 +18,18 @@ const PhotoAPI = () => {
   useEffect(() => {
     photoURL
       ? null
-      : api.photos
-          .getRandom({ query: "nature" })
-          .then((result) => {
-            setPhotoURL(result.response.urls.full);
-            setDescription(result.response.location.name);
-          })
-          .catch(() => console.error);
-    return () => console.log("cleanup");
-  }, []);
+      : api.photos.getRandom({ query: "nature" }).then((result) => {
+          console.log(result);
+          switch (result.type) {
+            case "error":
+              console.log("Error occured: ", result.errors[0]);
+            case "success":
+              setPhotoURL(result.response.urls.full);
+              setDescription(result.response.location.name);
+          }
+        });
+    document.body.style.backgroundImage = `url(${photoURL})`;
+  }, [photoURL]);
 
   const savePhotoData = (liked) => {
     liked
@@ -36,8 +41,6 @@ const PhotoAPI = () => {
       : (window.localStorage.setItem("photo", null),
         window.localStorage.setItem("photoDescription", null));
   };
-
-  document.body.style.backgroundImage = `url(${photoURL})`;
 
   return (
     <div className="footer">
