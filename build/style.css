@@ -1,0 +1,258 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background: black;
+  background-size: cover;
+}
+
+.bg2 {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Todo Card */
+.card {
+  width: fit-content;
+  background: ghostwhite;
+  padding: 10px;
+  font-family: "Bitter";
+  margin-left: 5%;
+  border-radius: 4px;
+  border-radius: 15px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 20px;
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.card:hover {
+  background: blanchedalmond;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  opacity: 100%;
+}
+
+.card h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.addTodo {
+  background-color: darkslateblue;
+  border-radius: 26px;
+  border: 1px solid darkslateblue;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Courier New;
+  font-size: 16px;
+  padding: 15px 30px;
+  margin-top: 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #000000;
+}
+
+.addTodo:hover {
+  background-color: #000000;
+}
+
+.addTodo:active {
+  position: relative;
+  top: 1px;
+}
+
+.mr2 {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.lh-copy {
+  font-size: 1.5rem;
+  margin: 8px;
+}
+
+.eachTodo {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* CSS for modal from 
+https://codepen.io/lucasyem/pen/ZEEYKdj */
+#modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal:empty {
+  display: none;
+}
+
+#modal > div {
+  max-width: 500px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#modal .buttons button {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.modalForm {
+  width: 450px;
+}
+
+.form_field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 2.5rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: 0.2s;
+}
+.form_field::placeholder {
+  color: gray;
+}
+.form_field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form_label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: gray;
+}
+
+.form_field:focus {
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form_field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+}
+
+section {
+  display: flex;
+}
+
+.img_icon {
+  width: auto;
+  height: auto;
+  max-width: 150px;
+  max-height: 150px;
+  margin: 30px;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem !important;
+}
+
+.dateTime {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem !important;
+}
+
+.f-subheadline {
+  font-size: 6rem;
+  font-family: "Bitter";
+  letter-spacing: 5px;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.lh-title {
+  line-height: 1.25;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  transition: all 0.3s ease-out;
+}
+
+/* Email Icon*/
+.emailIcon {
+  width: 7%;
+  float: right;
+  margin-top: -3px;
+  margin-right: -8px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: darkslateblue;
+}
+
+.emailIcon:hover {
+  background-color: black;
+}
+
+/* Image description */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  font-size: 2rem;
+  font-style: oblique;
+  font-family: "Bitter";
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.heart_checkbox {
+  margin-left: 10px;
+}
+
+.MuiCheckbox-root {
+  color: red !important;
+}
+
+.strikeline {
+  text-decoration: line-through;
+}

@@ -23,9 +23,11 @@ const PhotoAPI = () => {
           switch (result.type) {
             case "error":
               console.log("Error occured: ", result.errors[0]);
+              break;
             case "success":
               setPhotoURL(result.response.urls.full);
               setDescription(result.response.location.name);
+              break;
           }
         });
     document.body.style.backgroundImage = `url(${photoURL})`;
