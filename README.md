@@ -1,4 +1,4 @@
-# dashboard in React
+# Dashboard in React
 
 https://themarcusmin.github.io/dashboard/
 
